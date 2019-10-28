@@ -1,15 +1,15 @@
 
-<!-- 
+<!--
 
-  Tasks: 
+  Tasks:
 
   Task 1
 
-  **Associate labels with inputs.** If an input is a child of 
-  a label they are associated/linked. If not you can 
-  associate/link them using the for and id attributes. 
+  **Associate labels with inputs.** If an input is a child of
+  a label they are associated/linked. If not you can
+  associate/link them using the for and id attributes.
 
-  For example: 
+  For example:
 
   <label>
     Some Label
@@ -17,40 +17,40 @@
   </label>
 
   or
-  
+
   <label for="some-id">Some Label</label>
   <input id="some-id">
 
-  Some of the labels below have a nested input and 
-  others do not. Your job is to find the labels that do not 
-  have nested inputs and use the id and for attributes to 
-  associate/link them. 
+  Some of the labels below have a nested input and
+  others do not. Your job is to find the labels that do not
+  have nested inputs and use the id and for attributes to
+  associate/link them.
 
-  Task 2: 
+  Task 2:
 
-  **Set the attribute for each input.** The inputs in the 
+  **Set the attribute for each input.** The inputs in the
   form need to take various types of data. Some take text
   some take numbers, some take files, colors, or dates. Your
-  job is to configure each input to handle the correct type 
-  of input by setting the type attribute. 
+  job is to configure each input to handle the correct type
+  of input by setting the type attribute.
 
-  Inputs also have a placeholder attribute that displays 
-  a placeholder message. You should configure this to a 
-  reasonable value. 
+  Inputs also have a placeholder attribute that displays
+  a placeholder message. You should configure this to a
+  reasonable value.
 
   The browser will autocomplete on some inputs if we allow
-  it. Some inputs want this and otherd do not. 
+  it. Some inputs want this and otherd do not.
 
-  Inputs should have a name attribute this sets the key for 
+  Inputs should have a name attribute this sets the key for
   the value submitted from the form. Give each input a name
-  that makes sense. 
+  that makes sense.
 
-  Refer to this list of input attributes for more info: 
+  Refer to this list of input attributes for more info:
 
   https://www.w3schools.com/html/html_form_attributes.asp
- 
-  Take a look at each of the inputs and set the attributes 
-  following the guide below. 
+
+  Take a look at each of the inputs and set the attributes
+  following the guide below.
 
   - Enter their User name (input type text, should not autocomplete)
   - Email (input email)
@@ -62,46 +62,43 @@
   - Enter a bio (textarea)
   - Upload a picture (input file, should only accept images)
   - Self Destruct (input checkbox, should be DISABLED by default since we haven't implemented this feature yet)
-  
+
  -->
  <!doctype html>
  <html>
-   
+
 <body>
 <form action="/your/api" method="">
- 
+
   <p>
     <!-- Associate the label and input -->
-    <!-- set: type, name, id, placeholder, autocomplete, required -->
-    <label>Name</label>
-    <input>
+    <label for="name">Name</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      placeholder="enter yoiur name"
+      pattern="/^$|\s+/">
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, placeholder, autocomplete, required -->
-    <label>Email</label>
-    <input>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="enter email">
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, placeholder -->
-    <label>Pet Count</label>
-    <input>
+    <label for="pets">Pet Count</label>
+    <input id="pets" name="pets" type="number" placeholder="number of pets">
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, placeholder -->
-    <label>Birthday</label>
-    <input>
+    <label for="birthday">Birthday</label>
+    <input id="birthday" name="birthday" type="datetime-local" placeholder="birth day">
   </p>
-  
+
   <p>
-    <!-- Set the name for the select make none the current selection -->
     <label>Prefix</label>
-    <select>
+    <select name="prefix">
       <option>Mr</option>
       <option>Mrs</option>
       <option>Ms</option>
@@ -111,76 +108,61 @@
       <option>None</option>
     </select>
   </p>
-  
+
+
   <!-- Associate labels with form elements with for and id -->
   <ul>
     <li>
-      <!-- Associate the label and input -->
-      <!-- set: type, name, id, value -->
-      <label>
-        <input>
+      <label for="radio-admin">
+        <input id="radio-admin" type="radio" name="role" value="Admin"/>
         Admin</label>
     </li>
     <li>
-      <!-- Associate the label and input -->
-      <!-- set: type, name, id, value -->
       <label>
-        <input>
+        <input type="radio" name="role" value="Editor" />
         Editor</label>
     </li>
     <li>
-      <!-- Associate the label and input -->
-      <!-- set: type, name, id, value -->
       <label>
-        <input>
+        <input type="radio" name="role" value="Contributor" />
         Contributor</label>
     </li>
   </ul>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, value -->
     <label>
-      <input>
+      <input type="checkbox" name="public">
       Public Bio</label>
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, value -->
     <label>
-      <input>
+      <input name="color" type="color">
       Color</label>
   </p>
-  
+
   <p>
-    <!-- Set the name for the textarea -->
-    <label>Message</label>
-    <textarea></textarea>
+    <label id="message">Message</label>
+    <textarea id="message" name="bio"></textarea>
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id -->
     <label>Upload Image</label>
-    <input>
+    <input name="image" type="file">
   </p>
-  
+
   <p>
-    <!-- Associate the label and input -->
-    <!-- set: type, name, id, value, disabled -->
     <label>
-      <input>
+      <input name="self-destruct" type="checkbox">
       Self Destruct</label>
   </p>
-  
+
+
   <p>
-    <!-- Type reset -->
-    <button>cancel</button>
-    <!-- Type submit -->
-    <button>Submit</button>
+    <button type="reset">cancel</button>
+    <button type="submit">Submit</button>
   </p>
-  
+
 </form>
 
 

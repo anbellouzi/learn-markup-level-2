@@ -9,18 +9,18 @@
       <p>
         <label>
           Enter Number
-          <input id="swapi-id">
+          <input id="swapi-id" type="number">
         </label>
       </p>
 
       <p>
         <select id="swapi-category">
-          <!-- Create option with value="people" -->
-          <!-- Create option with value="planets" -->
-          <!-- Create option with value="starships" -->
+          <option>people</option>
+          <option>planets</option>
+          <option>starships</option>
         </select>
       </p>
-      
+
       <p>
         <button type="submit">Submit</button>
       </p>
@@ -28,11 +28,12 @@
 
     <div id="results">
       <!-- Star Wars Data -->
+      <input type="radio" name="" value="">
     </div>
 
     <script>
       // No need to edit below this point
-      // Get reference to DOM elements 
+      // Get reference to DOM elements
       const form = document.getElementById('form')
       const results = document.getElementById('results')
       const swapiId = document.getElementById('swapi-id')
@@ -61,7 +62,7 @@
       // Handle Data returned from Stars Wars API
       function handleData(json) {
         console.log(json)
-        // Future lesson takes this object apart to generate 
+        // Future lesson takes this object apart to generate
         let text = ''
 
         const keys = Object.keys(json)
